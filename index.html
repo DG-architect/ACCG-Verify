@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_5.html -->
+<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_6.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -310,6 +310,35 @@ function showScreen(id) {
   document.getElementById(id).className = "screen active";
 }
 
+function genRef() {
+  var d = new Date();
+  var date = d.getFullYear().toString() + ('0'+(d.getMonth()+1)).slice(-2) + ('0'+d.getDate()).slice(-2);
+  var rand = Math.floor(1000 + Math.random() * 9000);
+  return "INC-" + date + "-" + rand;
+}
+
+function consumerAlertHtml(type, code) {
+  var ref = genRef();
+  var msg = type === "redeemed"
+    ? "This stamp code has already been recorded in our system. This may mean this product is counterfeit, however it is also possible that this product is genuine and the code has been used fraudulently elsewhere."
+    : "This stamp code is not recognised in our system. This product is likely counterfeit.";
+
+  return '<div style="background:#fef2f2;border-radius:8px;padding:14px;margin-bottom:0">' +
+    '<p style="color:#b91c1c;font-size:13px;line-height:1.7;margin-bottom:12px">' + msg + '</p>' +
+    '<p style="color:#b91c1c;font-size:13px;line-height:1.7;margin-bottom:12px"><strong>An automatic alert has been sent to the tax authority.</strong></p>' +
+    '<p style="color:#7f1d1d;font-size:13px;line-height:1.7;margin-bottom:12px"><strong>Please do not purchase this product and do not inform the retailer.</strong> Take a screenshot of this page for your records.</p>' +
+    '<div style="background:white;border:1px solid #fca5a5;border-radius:8px;padding:12px;margin-bottom:12px">' +
+      '<p style="color:#555;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Incident Reference</p>' +
+      '<p style="color:#0a1628;font-family:monospace;font-size:15px;font-weight:bold;letter-spacing:2px">' + ref + '</p>' +
+    '</div>' +
+    '<div style="background:white;border:1px solid #fca5a5;border-radius:8px;padding:12px">' +
+      '<p style="color:#555;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">&#128222; ACCG Compliance Hotline</p>' +
+      '<a href="tel:+448000000000" style="color:#0a1628;font-size:17px;font-weight:bold;text-decoration:none;display:block;margin-bottom:4px">+44 800 000 0000</a>' +
+      '<p style="color:#888;font-size:11px">Lines open 24 hours &middot; 7 days a week</p>' +
+    '</div>' +
+  '</div>';
+}
+
 function doVerify(inputId, resultId, iconId, titleId, subId, detId, isConsumer) {
   var code = document.getElementById(inputId).value.trim().toUpperCase();
   if (!code) { alert("Please enter a stamp code first."); return; }
@@ -326,23 +355,30 @@ function doVerify(inputId, resultId, iconId, titleId, subId, detId, isConsumer) 
   if (!d) {
     result.className += " invalid";
     icon.innerHTML  = "?";
-    title.innerHTML = "Code Not Recognised";
-    sub.innerHTML   = "This code does not exist in the ACCG system.";
-    det.innerHTML   = rowHtml("Code", code) + rowHtml("Status", '<span style="color:#b45309">Unknown / Invalid</span>') + rowHtml("Action", isConsumer ? '<span style="color:#b91c1c">Do not purchase this product</span>' : '<span style="color:#b91c1c">Report to central authority</span>');
+    title.innerHTML = isConsumer ? "&#9888; Warning — Unrecognised Code" : "Code Not Recognised";
+    sub.innerHTML   = isConsumer ? "This code does not exist in the ACCG system." : "This code does not exist in the ACCG system.";
+    det.innerHTML   = isConsumer
+      ? consumerAlertHtml("invalid", code)
+      : rowHtml("Code", code) + rowHtml("Status", '<span style="color:#b45309">Unknown / Invalid</span>') + rowHtml("Action", '<span style="color:#b91c1c">Report to central authority</span>');
+
   } else if (d.status === "genuine") {
     result.className += " genuine";
     icon.innerHTML  = "&#10003;";
     title.innerHTML = isConsumer ? "Product is Genuine" : "Stamp Verified - Genuine";
     sub.innerHTML   = isConsumer ? "This product carries a valid ACCG tax stamp and is genuine." : "This product carries a valid, unredeemed ACCG tax stamp.";
     det.innerHTML   = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("Issued", d.issued) + rowHtml("Serial No.", d.serial) + rowHtml("Status", '<span style="color:#065f46;font-weight:bold">GENUINE</span>');
+
   } else {
     result.className += " redeemed";
     icon.innerHTML  = "!";
-    title.innerHTML = isConsumer ? "WARNING - May Be Counterfeit" : "ALERT - Already Redeemed";
-    sub.innerHTML   = isConsumer ? "This stamp has already been used. Do not purchase this product." : "This stamp has already been scanned. Possible counterfeit.";
-    var rows = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("First redeemed", '<span style="color:#b91c1c">'+d.redeemed+'</span>');
-    if (!isConsumer) { rows += rowHtml("Location", d.location) + rowHtml("Serial No.", d.serial) + rowHtml("Action required", '<span style="color:#b91c1c;font-weight:bold">DETAIN AND REPORT</span>'); }
-    else { rows += rowHtml("Action", '<span style="color:#b91c1c;font-weight:bold">Do not purchase - report to store</span>'); }
+    title.innerHTML = isConsumer ? "&#9888; Warning — Possible Counterfeit" : "ALERT - Already Redeemed";
+    sub.innerHTML   = isConsumer ? "This stamp has already been recorded in our system." : "This stamp has already been scanned. Possible counterfeit.";
+    var rows;
+    if (!isConsumer) {
+      rows = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("First redeemed", '<span style="color:#b91c1c">'+d.redeemed+'</span>') + rowHtml("Location", d.location) + rowHtml("Serial No.", d.serial) + rowHtml("Action required", '<span style="color:#b91c1c;font-weight:bold">DETAIN AND REPORT</span>');
+    } else {
+      rows = consumerAlertHtml("redeemed", code);
+    }
     det.innerHTML = rows;
   }
   result.scrollIntoView({ behavior: "smooth", block: "nearest" });
