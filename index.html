@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_6.html -->
+<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_7.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,6 +96,61 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 .b-redeemed { background: #fee2e2; color: #b91c1c; }
 .b-invalid { background: #fde68a; color: #92400e; }
 
+/* DASHBOARD */
+.dash-main { max-width: 520px; margin: 0 auto; padding: 20px 16px; }
+.dash-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.dash-title { color: #e8c97a; font-size: 17px; font-weight: bold; }
+.dash-subtitle { color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 2px; }
+.dash-time { color: rgba(255,255,255,0.3); font-size: 11px; text-align: right; }
+
+.dash-period { display: flex; gap: 6px; margin-bottom: 20px; }
+.period-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: rgba(255,255,255,0.5); cursor: pointer; }
+.period-btn.active { background: #c9a84c; border-color: #c9a84c; color: #0a1628; font-weight: bold; }
+
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.stat-card { background: #152240; border-radius: 12px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); }
+.stat-card.alert { border-color: rgba(185,28,28,0.4); background: rgba(185,28,28,0.1); }
+.stat-card.genuine { border-color: rgba(26,122,74,0.4); background: rgba(26,122,74,0.08); }
+.stat-icon { font-size: 22px; margin-bottom: 8px; }
+.stat-value { font-size: 28px; font-weight: 900; color: white; line-height: 1; margin-bottom: 4px; }
+.stat-card.alert .stat-value { color: #f87171; }
+.stat-card.genuine .stat-value { color: #34d399; }
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-change { font-size: 11px; margin-top: 6px; }
+.stat-change.up { color: #f87171; }
+.stat-change.good { color: #34d399; }
+
+.dash-section { background: #152240; border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.06); }
+.dash-section-title { color: #c9a84c; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+
+.progress-row { margin-bottom: 12px; }
+.progress-row:last-child { margin-bottom: 0; }
+.progress-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
+.progress-name { color: rgba(255,255,255,0.7); }
+.progress-val { color: rgba(255,255,255,0.4); }
+.progress-bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; }
+.fill-gold { background: #c9a84c; }
+.fill-blue { background: #60a5fa; }
+.fill-purple { background: #a78bfa; }
+.fill-red { background: #f87171; }
+
+.status-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 8px; gap: 2px; }
+.status-seg { height: 100%; border-radius: 2px; }
+
+.summary-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px; }
+.summary-row:last-child { border-bottom: none; }
+.summary-label { color: rgba(255,255,255,0.5); }
+.summary-value { color: white; font-weight: 600; }
+
+.live-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; display: inline-block; margin-right: 6px; animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.dash-agent-info { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.dash-agent-name { color: #e8c97a; font-size: 13px; font-weight: bold; }
+.dash-agent-role { color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 2px; }
+.dash-logout { color: rgba(255,255,255,0.3); font-size: 11px; cursor: pointer; }
+
 .footer { text-align: center; padding: 16px; font-size: 11px; color: rgba(255,255,255,0.3); }
 .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; }
 .modal.open { display: flex; }
@@ -129,8 +184,16 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
       <div class="role-card" id="btnAgent">
         <div class="role-icon">🔒</div>
         <div>
-          <div class="role-title">Tax Authority Agent</div>
+          <div class="role-title">Tax Authority — Field Agent</div>
           <div class="role-desc">Verify stamp authenticity and check tax compliance in the field.</div>
+        </div>
+        <div class="role-arrow">›</div>
+      </div>
+      <div class="role-card" id="btnCentral">
+        <div class="role-icon">📊</div>
+        <div>
+          <div class="role-title">Tax Authority — Central Agent</div>
+          <div class="role-desc">Access the management dashboard, reporting and system oversight.</div>
         </div>
         <div class="role-arrow">›</div>
       </div>
@@ -217,6 +280,13 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
         </div>
         <span class="demo-agent-tap">Tap to fill ›</span>
       </div>
+      <div class="demo-agent-row" id="demoAgent3">
+        <div class="demo-agent-info">
+          <span class="demo-agent-name">Director Karim &nbsp;<span style="background:rgba(201,168,76,0.2);color:#c9a84c;font-size:10px;padding:1px 6px;border-radius:4px">Central</span></span>
+          <span class="demo-agent-id">BGD-CA-001 &nbsp;|&nbsp; PIN: 9512</span>
+        </div>
+        <span class="demo-agent-tap">Tap to fill ›</span>
+      </div>
     </div>
   </div>
 </div>
@@ -256,6 +326,123 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
       <h3>Demo codes — tap to test</h3>
       <div id="testList"><div class="test-row"><span class="test-code">ACC-ALC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0002</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0003</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-ALC-0005</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">FAKE-CODE-999</span><span class="badge b-invalid">Invalid</span></div></div>
     </div>
+  </div>
+</div>
+
+<!-- CENTRAL AGENT DASHBOARD -->
+<div class="screen" id="screen-dashboard">
+  <div class="dash-main">
+    <button class="back-btn" id="btnDashBack">← Back</button>
+
+    <div class="dash-agent-info">
+      <div>
+        <div class="dash-agent-name" id="dashAgentName">Central Agent</div>
+        <div class="dash-agent-role">Tax Authority — Central Operations</div>
+      </div>
+      <div class="dash-logout"><span class="live-dot"></span>Live</div>
+    </div>
+
+    <!-- Period selector -->
+    <div class="dash-period">
+      <button class="period-btn active" id="pToday">Today</button>
+      <button class="period-btn" id="pWeek">This Week</button>
+      <button class="period-btn" id="pMonth">This Month</button>
+    </div>
+
+    <!-- Key stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">🏭</div>
+        <div class="stat-value" id="statPrinted">12,450</div>
+        <div class="stat-label">Stamps Printed</div>
+        <div class="stat-change good">↑ 340 today</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div class="stat-value" id="statIssued">11,892</div>
+        <div class="stat-label">Stamps Issued</div>
+        <div class="stat-change good">↑ 280 today</div>
+      </div>
+      <div class="stat-card genuine">
+        <div class="stat-icon">✅</div>
+        <div class="stat-value" id="statRedeemed">9,741</div>
+        <div class="stat-label">Stamps Redeemed</div>
+        <div class="stat-change good">↑ 214 today</div>
+      </div>
+      <div class="stat-card alert">
+        <div class="stat-icon">⚠</div>
+        <div class="stat-value" id="statAlerts">23</div>
+        <div class="stat-label">Alerts Triggered</div>
+        <div class="stat-change up">↑ 3 today</div>
+      </div>
+    </div>
+
+    <!-- Stamp lifecycle -->
+    <div class="dash-section">
+      <div class="dash-section-title">
+        <span>Stamp Lifecycle Overview</span>
+        <span style="color:rgba(255,255,255,0.3);font-size:10px">All stamps</span>
+      </div>
+      <div class="status-bar">
+        <div class="status-seg fill-blue" style="width:78%"></div>
+        <div class="status-seg fill-gold" style="width:14%"></div>
+        <div class="status-seg fill-red" style="width:5%"></div>
+        <div class="status-seg" style="width:3%;background:rgba(255,255,255,0.1)"></div>
+      </div>
+      <div style="display:flex;gap:14px;margin-bottom:14px;flex-wrap:wrap">
+        <span style="font-size:11px;color:rgba(255,255,255,0.5)"><span style="color:#60a5fa">■</span> Redeemed 78%</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.5)"><span style="color:#c9a84c">■</span> Issued 14%</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.5)"><span style="color:#f87171">■</span> Alerts 5%</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.5)"><span style="color:rgba(255,255,255,0.2)">■</span> Printed 3%</span>
+      </div>
+      <div class="summary-row"><span class="summary-label">Redemption rate</span><span class="summary-value" style="color:#34d399">81.8%</span></div>
+      <div class="summary-row"><span class="summary-label">Alert rate</span><span class="summary-value" style="color:#f87171">0.24%</span></div>
+      <div class="summary-row"><span class="summary-label">Unissued stock</span><span class="summary-value">558 stamps</span></div>
+    </div>
+
+    <!-- By product type -->
+    <div class="dash-section">
+      <div class="dash-section-title">Activity by Product Type</div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">🍺 Alcohol</span><span class="progress-val">5,214 redeemed</span></div>
+        <div class="progress-bar"><div class="progress-fill fill-gold" style="width:62%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">🚬 Tobacco</span><span class="progress-val">3,891 redeemed</span></div>
+        <div class="progress-bar"><div class="progress-fill fill-blue" style="width:46%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">🛍 Retail / Brand</span><span class="progress-val">636 redeemed</span></div>
+        <div class="progress-bar"><div class="progress-fill fill-purple" style="width:8%"></div></div>
+      </div>
+    </div>
+
+    <!-- By region -->
+    <div class="dash-section">
+      <div class="dash-section-title">Activity by Region</div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">Dhaka</span><span class="progress-val">3,840 &nbsp;<span style="color:#f87171">9 alerts</span></span></div>
+        <div class="progress-bar"><div class="progress-fill fill-gold" style="width:72%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">Chittagong</span><span class="progress-val">2,210 &nbsp;<span style="color:#f87171">7 alerts</span></span></div>
+        <div class="progress-bar"><div class="progress-fill fill-gold" style="width:42%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">Sylhet</span><span class="progress-val">1,940 &nbsp;<span style="color:#f87171">4 alerts</span></span></div>
+        <div class="progress-bar"><div class="progress-fill fill-gold" style="width:36%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">Rajshahi</span><span class="progress-val">1,102 &nbsp;<span style="color:#f87171">2 alerts</span></span></div>
+        <div class="progress-bar"><div class="progress-fill fill-gold" style="width:21%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label"><span class="progress-name">Other regions</span><span class="progress-val">649 &nbsp;<span style="color:#f87171">1 alert</span></span></div>
+        <div class="progress-bar"><div class="progress-fill fill-gold" style="width:12%"></div></div>
+      </div>
+    </div>
+
+    <div class="footer">ACCG &nbsp;·&nbsp; Central Operations Dashboard &nbsp;·&nbsp; Prototype v0.3</div>
   </div>
 </div>
 
@@ -424,14 +611,17 @@ function autoVerifyFromUrl(role) {
 // Navigation
 document.getElementById("btnConsumer").onclick = function() { showScreen("screen-consumer"); autoVerifyFromUrl("consumer"); };
 document.getElementById("btnAgent").onclick    = function() { showScreen("screen-auth"); };
+document.getElementById("btnCentral").onclick  = function() { showScreen("screen-auth"); };
 document.getElementById("btnConsumerBack").onclick = function() { showScreen("screen-landing"); };
 document.getElementById("btnAgentBack").onclick    = function() { showScreen("screen-landing"); };
 document.getElementById("btnAuthBack").onclick     = function() { showScreen("screen-landing"); };
+document.getElementById("btnDashBack").onclick     = function() { showScreen("screen-landing"); };
 
 // Demo credentials auto-fill
 var AGENTS = {
-  "ETA-00142": { pin: "4821", name: "Field Agent Hassan",  region: "Cairo District" },
-  "BGD-00271": { pin: "7364", name: "Field Agent Rahman",  region: "Dhaka Zone 3"   }
+  "ETA-00142": { pin: "4821", name: "Field Agent Hassan",  region: "Cairo District", role: "field" },
+  "BGD-00271": { pin: "7364", name: "Field Agent Rahman",  region: "Dhaka Zone 3",   role: "field" },
+  "BGD-CA-001": { pin: "9512", name: "Director Karim",     region: "Central Operations", role: "central" }
 };
 
 document.getElementById("demoAgent1").onclick = function() {
@@ -444,6 +634,29 @@ document.getElementById("demoAgent2").onclick = function() {
   document.getElementById("authPin").value = "7364";
   document.getElementById("authError").style.display = "none";
 };
+document.getElementById("demoAgent3").onclick = function() {
+  document.getElementById("authAgentId").value = "BGD-CA-001";
+  document.getElementById("authPin").value = "9512";
+  document.getElementById("authError").style.display = "none";
+};
+
+// Period buttons
+var periods = {
+  "pToday": { printed:"340", issued:"280", redeemed:"214", alerts:"3" },
+  "pWeek":  { printed:"2,840", issued:"2,210", redeemed:"1,740", alerts:"11" },
+  "pMonth": { printed:"12,450", issued:"11,892", redeemed:"9,741", alerts:"23" }
+};
+["pToday","pWeek","pMonth"].forEach(function(id) {
+  document.getElementById(id).onclick = function() {
+    document.querySelectorAll(".period-btn").forEach(function(b){ b.className="period-btn"; });
+    this.className = "period-btn active";
+    var p = periods[id];
+    document.getElementById("statPrinted").textContent  = p.printed;
+    document.getElementById("statIssued").textContent   = p.issued;
+    document.getElementById("statRedeemed").textContent = p.redeemed;
+    document.getElementById("statAlerts").textContent   = p.alerts;
+  };
+});
 
 // Auth login
 function doLogin() {
@@ -453,11 +666,15 @@ function doLogin() {
 
   if (agent && agent.pin === pin) {
     document.getElementById("authError").style.display = "none";
-    // Update agent portal header with agent name
-    document.querySelector("#screen-agent .card-top p").innerHTML =
-      "Field Agent Portal &mdash; " + agent.name + " &nbsp;|&nbsp; " + agent.region;
-    showScreen("screen-agent");
-    autoVerifyFromUrl("agent");
+    if (agent.role === "central") {
+      document.getElementById("dashAgentName").textContent = agent.name;
+      showScreen("screen-dashboard");
+    } else {
+      document.querySelector("#screen-agent .card-top p").innerHTML =
+        "Field Agent Portal &mdash; " + agent.name + " &nbsp;|&nbsp; " + agent.region;
+      showScreen("screen-agent");
+      autoVerifyFromUrl("agent");
+    }
   } else {
     document.getElementById("authError").style.display = "block";
   }
