@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_1.html -->
+<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_2.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,56 +12,50 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 .header h1 { color: #c9a84c; font-size: 20px; margin-bottom: 4px; }
 .header p { color: rgba(255,255,255,0.5); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
 
-/* SCREENS */
 .screen { display: none; }
 .screen.active { display: block; }
 
-/* LANDING PAGE */
+/* AUTO VERIFY BANNER */
+.auto-banner { background: #152240; border: 1px solid rgba(201,168,76,0.4); border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #e8c97a; }
+
+/* LANDING */
 .landing { max-width: 460px; margin: 0 auto; padding: 32px 16px; text-align: center; }
 .landing h2 { color: #e8c97a; font-size: 20px; margin-bottom: 8px; }
 .landing p { color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 36px; line-height: 1.6; }
-
 .role-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
-.role-card { background: #152240; border: 2px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 24px 20px; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 18px; transition: border-color 0.15s; }
-.role-card:hover { border-color: #c9a84c; }
+.role-card { background: #152240; border: 2px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 24px 20px; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 18px; }
 .role-card:active { background: #1e3160; }
 .role-icon { font-size: 36px; flex-shrink: 0; }
 .role-title { color: #c9a84c; font-size: 17px; font-weight: bold; margin-bottom: 4px; }
 .role-desc { color: rgba(255,255,255,0.5); font-size: 12px; line-height: 1.5; }
 .role-arrow { color: #c9a84c; font-size: 22px; margin-left: auto; flex-shrink: 0; }
-
 .landing-footer { color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
 
-/* AGENT PAGE */
+/* SHARED */
 .main { max-width: 480px; margin: 0 auto; padding: 20px 16px; }
-
 .back-btn { background: none; border: none; color: #c9a84c; font-size: 13px; cursor: pointer; margin-bottom: 16px; display: flex; align-items: center; gap: 6px; padding: 0; }
-
 .card { background: white; border-radius: 14px; overflow: hidden; margin-bottom: 16px; color: #0a1628; }
 .card-top { background: #152240; padding: 14px 18px; }
 .card-top h2 { color: #e8c97a; font-size: 15px; }
 .card-top p { color: rgba(255,255,255,0.5); font-size: 11px; margin-top: 2px; }
 .card-body { padding: 18px; }
-
 .scan-btn { width: 100%; background: #0a1628; color: #c9a84c; border: 2px solid #c9a84c; border-radius: 10px; padding: 15px; font-size: 15px; font-weight: bold; cursor: pointer; margin-bottom: 16px; }
 .divider { text-align: center; color: #999; font-size: 12px; margin-bottom: 14px; }
 .input-row { display: flex; gap: 8px; }
-.code-input { flex: 1; border: 1.5px solid #ccc; border-radius: 8px; padding: 12px; font-size: 15px; color: #0a1628; outline: none; }
+.code-input { flex: 1; border: 1.5px solid #ccc; border-radius: 8px; padding: 12px; font-size: 15px; color: #0a1628; outline: none; text-transform: uppercase; }
 .verify-btn { background: #c9a84c; color: #0a1628; border: none; border-radius: 8px; padding: 12px 18px; font-size: 14px; font-weight: bold; cursor: pointer; }
 
-#result { display: none; margin-top: 16px; border-radius: 10px; overflow: hidden; }
+.result { display: none; margin-top: 16px; border-radius: 10px; overflow: hidden; }
 .res-banner { padding: 16px; display: flex; align-items: flex-start; gap: 12px; }
 .res-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; flex-shrink: 0; color: white; }
 .res-title { font-size: 16px; font-weight: bold; margin-bottom: 3px; }
 .res-sub { font-size: 12px; opacity: 0.75; }
-
-#result.genuine .res-banner { background: #eafaf1; color: #1a7a4a; }
-#result.genuine .res-icon { background: #1a7a4a; }
-#result.redeemed .res-banner { background: #fef2f2; color: #b91c1c; }
-#result.redeemed .res-icon { background: #b91c1c; }
-#result.invalid .res-banner { background: #fffbeb; color: #b45309; }
-#result.invalid .res-icon { background: #b45309; }
-
+.result.genuine .res-banner { background: #eafaf1; color: #1a7a4a; }
+.result.genuine .res-icon { background: #1a7a4a; }
+.result.redeemed .res-banner { background: #fef2f2; color: #b91c1c; }
+.result.redeemed .res-icon { background: #b91c1c; }
+.result.invalid .res-banner { background: #fffbeb; color: #b45309; }
+.result.invalid .res-icon { background: #b45309; }
 .res-details { background: white; padding: 12px 16px; border-top: 1px solid #eee; }
 .detail-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
 .detail-row:last-child { border-bottom: none; }
@@ -78,26 +72,7 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 .b-redeemed { background: #fee2e2; color: #b91c1c; }
 .b-invalid { background: #fde68a; color: #92400e; }
 
-/* CONSUMER PAGE */
-.consumer-main { max-width: 460px; margin: 0 auto; padding: 20px 16px; }
-.consumer-card { background: white; border-radius: 14px; overflow: hidden; margin-bottom: 16px; color: #0a1628; }
-.consumer-card-top { background: #152240; padding: 14px 18px; }
-.consumer-card-top h2 { color: #e8c97a; font-size: 15px; }
-.consumer-card-top p { color: rgba(255,255,255,0.5); font-size: 11px; margin-top: 2px; }
-.consumer-card-body { padding: 18px; }
-.consumer-info { background: #f8f9fa; border-radius: 10px; padding: 16px; margin-bottom: 16px; text-align: center; }
-.consumer-info p { color: #555; font-size: 13px; line-height: 1.6; }
-
-#consumer-result { display: none; margin-top: 16px; border-radius: 10px; overflow: hidden; }
-#consumer-result.genuine .res-banner { background: #eafaf1; color: #1a7a4a; }
-#consumer-result.genuine .res-icon { background: #1a7a4a; }
-#consumer-result.redeemed .res-banner { background: #fef2f2; color: #b91c1c; }
-#consumer-result.redeemed .res-icon { background: #b91c1c; }
-#consumer-result.invalid .res-banner { background: #fffbeb; color: #b45309; }
-#consumer-result.invalid .res-icon { background: #b45309; }
-
 .footer { text-align: center; padding: 16px; font-size: 11px; color: rgba(255,255,255,0.3); }
-
 .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; }
 .modal.open { display: flex; }
 .modal-box { background: #152240; border: 1.5px solid #c9a84c; border-radius: 18px; padding: 28px 24px; text-align: center; max-width: 300px; margin: 20px; }
@@ -113,12 +88,11 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
   <p>Anti Counterfeiting &amp; Compliance Group</p>
 </div>
 
-<!-- SCREEN 1: LANDING / ROLE SELECTION -->
+<!-- LANDING -->
 <div class="screen active" id="screen-landing">
   <div class="landing">
     <h2>Welcome</h2>
     <p>Please select your role to continue to the stamp verification system.</p>
-
     <div class="role-cards">
       <div class="role-card" id="btnConsumer">
         <div class="role-icon">🛒</div>
@@ -128,7 +102,6 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
         </div>
         <div class="role-arrow">›</div>
       </div>
-
       <div class="role-card" id="btnAgent">
         <div class="role-icon">🔒</div>
         <div>
@@ -138,34 +111,30 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
         <div class="role-arrow">›</div>
       </div>
     </div>
-
     <div class="landing-footer">Prototype v0.1 &nbsp;·&nbsp; Demo use only</div>
   </div>
 </div>
 
-<!-- SCREEN 2: CONSUMER -->
+<!-- CONSUMER -->
 <div class="screen" id="screen-consumer">
-  <div class="consumer-main">
+  <div class="main">
     <button class="back-btn" id="btnConsumerBack">← Back</button>
-
-    <div class="consumer-card">
-      <div class="consumer-card-top">
+    <div id="consumerAutoBanner" class="auto-banner" style="display:none">
+      📷 QR code detected — verifying product automatically...
+    </div>
+    <div class="card">
+      <div class="card-top">
         <h2>Product Authenticity Check</h2>
         <p>Consumer Verification Portal</p>
       </div>
-      <div class="consumer-card-body">
-        <div class="consumer-info">
-          <p>🔍 Scan the QR code on your product or enter the stamp code below to check if your product is genuine.</p>
-        </div>
-
+      <div class="card-body">
         <button class="scan-btn" id="btnConsumerScan">📷 Scan QR Code</button>
         <div class="divider">--- or enter code manually ---</div>
         <div class="input-row">
-          <input class="code-input" id="consumerCodeInput" type="text" placeholder="e.g. ACC-TBC-0001" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+          <input class="code-input" id="consumerCodeInput" type="text" placeholder="e.g. ACC-ALC-0001" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
           <button class="verify-btn" id="btnConsumerVerify">Check</button>
         </div>
-
-        <div id="consumer-result">
+        <div class="result" id="consumer-result">
           <div class="res-banner">
             <div class="res-icon" id="consumerResIcon"></div>
             <div>
@@ -177,19 +146,20 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
         </div>
       </div>
     </div>
-
     <div class="test-panel">
       <h3>Demo codes — tap to test</h3>
-      <div id="consumerTestList"><div class="test-row"><span class="test-code">ACC-TBC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-RTL-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-TBC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-ALC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-RTL-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">FAKE-CODE-999</span><span class="badge b-invalid">Invalid</span></div></div>
+      <div id="consumerTestList"><div class="test-row"><span class="test-code">ACC-ALC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0002</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0003</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-ALC-0005</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">FAKE-CODE-999</span><span class="badge b-invalid">Invalid</span></div></div>
     </div>
   </div>
 </div>
 
-<!-- SCREEN 3: TAX AGENT -->
+<!-- AGENT -->
 <div class="screen" id="screen-agent">
   <div class="main">
     <button class="back-btn" id="btnAgentBack">← Back</button>
-
+    <div id="agentAutoBanner" class="auto-banner" style="display:none">
+      📷 QR code detected — verifying stamp automatically...
+    </div>
     <div class="card">
       <div class="card-top">
         <h2>Stamp Verification</h2>
@@ -199,11 +169,10 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
         <button class="scan-btn" id="btnScan">📷 Scan QR / Barcode</button>
         <div class="divider">--- or enter code manually ---</div>
         <div class="input-row">
-          <input class="code-input" id="codeInput" type="text" placeholder="e.g. ACC-TBC-0001" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+          <input class="code-input" id="codeInput" type="text" placeholder="e.g. ACC-ALC-0001" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
           <button class="verify-btn" id="btnVerify">Verify</button>
         </div>
-
-        <div id="result">
+        <div class="result" id="result">
           <div class="res-banner">
             <div class="res-icon" id="resIcon"></div>
             <div>
@@ -215,10 +184,9 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
         </div>
       </div>
     </div>
-
     <div class="test-panel">
       <h3>Demo codes — tap to test</h3>
-      <div id="testList"><div class="test-row"><span class="test-code">ACC-TBC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-RTL-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-TBC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-ALC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-RTL-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">FAKE-CODE-999</span><span class="badge b-invalid">Invalid</span></div></div>
+      <div id="testList"><div class="test-row"><span class="test-code">ACC-ALC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0002</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0003</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-ALC-0005</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">FAKE-CODE-999</span><span class="badge b-invalid">Invalid</span></div></div>
     </div>
   </div>
 </div>
@@ -236,32 +204,37 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 
 <script>
 var CODES = {
-  "ACC-TBC-0001": { status: "genuine", product: "Tobacco - Cigarettes", brand: "Merit Gold", origin: "Egypt", issued: "12 May 2026", serial: "EG-TB-00012341" },
-  "ACC-TBC-0002": { status: "genuine", product: "Tobacco - Cigarettes", brand: "Cleopatra Classic", origin: "Egypt", issued: "12 May 2026", serial: "EG-TB-00012342" },
-  "ACC-TBC-0003": { status: "genuine", product: "Tobacco - Cigars", brand: "Nile Reserve", origin: "Egypt", issued: "13 May 2026", serial: "EG-TC-00012343" },
-  "ACC-ALC-0001": { status: "genuine", product: "Alcohol - Spirits", brand: "Stella Premium", origin: "Egypt", issued: "14 May 2026", serial: "EG-AL-00012344" },
-  "ACC-ALC-0002": { status: "genuine", product: "Alcohol - Wine", brand: "Omar Khayyam", origin: "Egypt", issued: "14 May 2026", serial: "EG-AL-00012345" },
-  "ACC-ALC-0003": { status: "genuine", product: "Alcohol - Spirits", brand: "Cairo Dry Gin", origin: "Egypt", issued: "15 May 2026", serial: "EG-AL-00012346" },
-  "ACC-RTL-0001": { status: "genuine", product: "Retail - Electronics", brand: "TechShield Pro", origin: "Bangladesh", issued: "18 May 2026", serial: "BD-RT-00012347" },
-  "ACC-RTL-0002": { status: "genuine", product: "Retail - Apparel", brand: "DhakaWear Auth", origin: "Bangladesh", issued: "19 May 2026", serial: "BD-RT-00012348" },
-  "ACC-RTL-0003": { status: "genuine", product: "Retail - Cosmetics", brand: "Purity Certified", origin: "Bangladesh", issued: "20 May 2026", serial: "BD-RT-00012349" },
-  "ACC-TBC-0010": { status: "genuine", product: "Tobacco - Cigarettes", brand: "Gold Leaf BD", origin: "Bangladesh", issued: "21 May 2026", serial: "BD-TB-00012350" },
-  "ACC-TBC-0004": { status: "redeemed", product: "Tobacco - Cigarettes", brand: "Merit Gold", origin: "Egypt", issued: "10 May 2026", redeemed: "22 May 2026 09:14", location: "Cairo - District 5", serial: "EG-TB-00012201" },
-  "ACC-ALC-0004": { status: "redeemed", product: "Alcohol - Spirits", brand: "Stella Premium", origin: "Egypt", issued: "11 May 2026", redeemed: "23 May 2026 14:32", location: "Alexandria - Port Zone", serial: "EG-AL-00012202" },
-  "ACC-RTL-0004": { status: "redeemed", product: "Retail - Electronics", brand: "TechShield Pro", origin: "Bangladesh", issued: "15 May 2026", redeemed: "28 May 2026 11:05", location: "Dhaka - Zone 3", serial: "BD-RT-00012203" },
-  "ACC-TBC-0005": { status: "redeemed", product: "Tobacco - Cigars", brand: "Nile Reserve", origin: "Egypt", issued: "09 May 2026", redeemed: "20 May 2026 16:48", location: "Cairo - Airport", serial: "EG-TC-00012204" },
-  "ACC-ALC-0005": { status: "redeemed", product: "Alcohol - Wine", brand: "Omar Khayyam", origin: "Egypt", issued: "08 May 2026", redeemed: "19 May 2026 08:21", location: "Giza - District 2", serial: "EG-AL-00012205" }
+  "ACC-ALC-0001": { status: "genuine",  product: "Alcohol - Spirits", brand: "Stella Premium",  origin: "Egypt",      issued: "14 May 2026", serial: "EG-AL-00012344" },
+  "ACC-ALC-0002": { status: "genuine",  product: "Alcohol - Wine",    brand: "Vintage Chateaux",    origin: "Egypt",      issued: "14 May 2026", serial: "EG-AL-00012345" },
+  "ACC-ALC-0003": { status: "genuine",  product: "Alcohol - Spirits", brand: "London Dry Gin",   origin: "Egypt",      issued: "15 May 2026", serial: "EG-AL-00012346" },
+  "ACC-TBC-0001": { status: "genuine",  product: "Tobacco - Cigarettes", brand: "Merit Gold",   origin: "Egypt",      issued: "12 May 2026", serial: "EG-TB-00012341" },
+  "ACC-TBC-0002": { status: "genuine",  product: "Tobacco - Cigarettes", brand: "Cleopatra Classic", origin: "Egypt", issued: "12 May 2026", serial: "EG-TB-00012342" },
+  "ACC-RTL-0001": { status: "genuine",  product: "Retail - Electronics", brand: "TechShield Pro", origin: "Bangladesh", issued: "18 May 2026", serial: "BD-RT-00012347" },
+  "ACC-RTL-0002": { status: "genuine",  product: "Retail - Apparel",   brand: "DhakaWear Auth", origin: "Bangladesh", issued: "19 May 2026", serial: "BD-RT-00012348" },
+  "ACC-RTL-0003": { status: "genuine",  product: "Retail - Cosmetics", brand: "Purity Certified", origin: "Bangladesh", issued: "20 May 2026", serial: "BD-RT-00012349" },
+  "ACC-TBC-0010": { status: "genuine",  product: "Tobacco - Cigarettes", brand: "Gold Leaf BD", origin: "Bangladesh", issued: "21 May 2026", serial: "BD-TB-00012350" },
+  "ACC-TBC-0003": { status: "genuine",  product: "Tobacco - Cigars",  brand: "Nile Reserve",    origin: "Egypt",      issued: "13 May 2026", serial: "EG-TC-00012343" },
+  "ACC-ALC-0004": { status: "redeemed", product: "Alcohol - Spirits", brand: "Stella Premium",  origin: "Egypt",      issued: "11 May 2026", redeemed: "23 May 2026 14:32", location: "Alexandria - Port Zone", serial: "EG-AL-00012202" },
+  "ACC-ALC-0005": { status: "redeemed", product: "Alcohol - Wine",    brand: "Vintage Chateaux",    origin: "Egypt",      issued: "08 May 2026", redeemed: "19 May 2026 08:21", location: "Giza - District 2",      serial: "EG-AL-00012205" },
+  "ACC-TBC-0004": { status: "redeemed", product: "Tobacco - Cigarettes", brand: "Merit Gold",   origin: "Egypt",      issued: "10 May 2026", redeemed: "22 May 2026 09:14", location: "Cairo - District 5",     serial: "EG-TB-00012201" },
+  "ACC-RTL-0004": { status: "redeemed", product: "Retail - Electronics", brand: "TechShield Pro", origin: "Bangladesh", issued: "15 May 2026", redeemed: "28 May 2026 11:05", location: "Dhaka - Zone 3",       serial: "BD-RT-00012203" },
+  "ACC-TBC-0005": { status: "redeemed", product: "Tobacco - Cigars",  brand: "Nile Reserve",    origin: "Egypt",      issued: "09 May 2026", redeemed: "20 May 2026 16:48", location: "Cairo - Airport",        serial: "EG-TC-00012204" }
 };
 
 var TESTS = [
-  { code: "ACC-TBC-0001", label: "Genuine",  cls: "b-genuine" },
   { code: "ACC-ALC-0001", label: "Genuine",  cls: "b-genuine" },
-  { code: "ACC-RTL-0001", label: "Genuine",  cls: "b-genuine" },
-  { code: "ACC-TBC-0004", label: "Redeemed", cls: "b-redeemed" },
+  { code: "ACC-ALC-0002", label: "Genuine",  cls: "b-genuine" },
+  { code: "ACC-ALC-0003", label: "Genuine",  cls: "b-genuine" },
   { code: "ACC-ALC-0004", label: "Redeemed", cls: "b-redeemed" },
-  { code: "ACC-RTL-0004", label: "Redeemed", cls: "b-redeemed" },
-  { code: "FAKE-CODE-999", label: "Invalid",  cls: "b-invalid" }
+  { code: "ACC-ALC-0005", label: "Redeemed", cls: "b-redeemed" },
+  { code: "FAKE-CODE-999", label: "Invalid", cls: "b-invalid" }
 ];
+
+var BASE_URL = "https://DG-architect.github.io/accg-verify/";
+
+function rowHtml(label, value) {
+  return '<div class="detail-row"><span class="detail-label">'+label+'</span><span class="detail-value">'+value+'</span></div>';
+}
 
 function showScreen(id) {
   var screens = document.querySelectorAll(".screen");
@@ -269,27 +242,9 @@ function showScreen(id) {
   document.getElementById(id).className = "screen active";
 }
 
-function rowHtml(label, value) {
-  return '<div class="detail-row"><span class="detail-label">' + label + '</span><span class="detail-value">' + value + '</span></div>';
-}
-
-function buildTestList(containerId, inputId, verifyFn) {
-  var list = document.getElementById(containerId);
-  for (var i = 0; i < TESTS.length; i++) {
-    (function(t) {
-      var row = document.createElement("div");
-      row.className = "test-row";
-      row.innerHTML = '<span class="test-code">' + t.code + '</span><span class="badge ' + t.cls + '">' + t.label + '</span>';
-      row.onclick = function() { document.getElementById(inputId).value = t.code; verifyFn(); };
-      list.appendChild(row);
-    })(TESTS[i]);
-  }
-}
-
 function doVerify(inputId, resultId, iconId, titleId, subId, detId, isConsumer) {
   var code = document.getElementById(inputId).value.trim().toUpperCase();
   if (!code) { alert("Please enter a stamp code first."); return; }
-
   var result = document.getElementById(resultId);
   var icon   = document.getElementById(iconId);
   var title  = document.getElementById(titleId);
@@ -298,49 +253,90 @@ function doVerify(inputId, resultId, iconId, titleId, subId, detId, isConsumer) 
   var d      = CODES[code];
 
   result.style.display = "block";
-  result.className = "";
+  result.className = "result";
 
   if (!d) {
-    result.className = "invalid";
-    icon.innerHTML = "?";
+    result.className += " invalid";
+    icon.innerHTML  = "?";
     title.innerHTML = "Code Not Recognised";
-    sub.innerHTML = "This code does not exist in the ACCG system.";
-    det.innerHTML = rowHtml("Code entered", code) + rowHtml("Status", '<span style="color:#b45309">Unknown / Invalid</span>') + rowHtml("Action", isConsumer ? '<span style="color:#b91c1c">Do not purchase this product</span>' : '<span style="color:#b91c1c">Report to central authority</span>');
-
+    sub.innerHTML   = "This code does not exist in the ACCG system.";
+    det.innerHTML   = rowHtml("Code", code) + rowHtml("Status", '<span style="color:#b45309">Unknown / Invalid</span>') + rowHtml("Action", isConsumer ? '<span style="color:#b91c1c">Do not purchase this product</span>' : '<span style="color:#b91c1c">Report to central authority</span>');
   } else if (d.status === "genuine") {
-    result.className = "genuine";
-    icon.innerHTML = "&#10003;";
+    result.className += " genuine";
+    icon.innerHTML  = "&#10003;";
     title.innerHTML = isConsumer ? "Product is Genuine" : "Stamp Verified - Genuine";
-    sub.innerHTML = isConsumer ? "This product carries a valid ACCG tax stamp and is genuine." : "This product carries a valid, unredeemed ACCG tax stamp.";
-    det.innerHTML = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("Issued", d.issued) + rowHtml("Serial No.", d.serial) + rowHtml("Status", '<span style="color:#065f46;font-weight:bold">GENUINE</span>');
-
-  } else if (d.status === "redeemed") {
-    result.className = "redeemed";
-    icon.innerHTML = "!";
-    title.innerHTML = isConsumer ? "WARNING - This Product May Be Counterfeit" : "ALERT - Already Redeemed";
-    sub.innerHTML = isConsumer ? "This stamp has already been used. Do not purchase this product." : "This stamp has already been scanned. Possible counterfeit.";
-    var rows = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("First redeemed", '<span style="color:#b91c1c">' + d.redeemed + '</span>');
+    sub.innerHTML   = isConsumer ? "This product carries a valid ACCG tax stamp and is genuine." : "This product carries a valid, unredeemed ACCG tax stamp.";
+    det.innerHTML   = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("Issued", d.issued) + rowHtml("Serial No.", d.serial) + rowHtml("Status", '<span style="color:#065f46;font-weight:bold">GENUINE</span>');
+  } else {
+    result.className += " redeemed";
+    icon.innerHTML  = "!";
+    title.innerHTML = isConsumer ? "WARNING - May Be Counterfeit" : "ALERT - Already Redeemed";
+    sub.innerHTML   = isConsumer ? "This stamp has already been used. Do not purchase this product." : "This stamp has already been scanned. Possible counterfeit.";
+    var rows = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("First redeemed", '<span style="color:#b91c1c">'+d.redeemed+'</span>');
     if (!isConsumer) { rows += rowHtml("Location", d.location) + rowHtml("Serial No.", d.serial) + rowHtml("Action required", '<span style="color:#b91c1c;font-weight:bold">DETAIN AND REPORT</span>'); }
-    else { rows += rowHtml("Action", '<span style="color:#b91c1c;font-weight:bold">Do not purchase — report to store</span>'); }
+    else { rows += rowHtml("Action", '<span style="color:#b91c1c;font-weight:bold">Do not purchase - report to store</span>'); }
     det.innerHTML = rows;
   }
-
   result.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
+function buildTestList(containerId, inputId, verifyFn) {
+  var list = document.getElementById(containerId);
+  for (var i = 0; i < TESTS.length; i++) {
+    (function(t) {
+      var row = document.createElement("div");
+      row.className = "test-row";
+      row.innerHTML = '<span class="test-code">'+t.code+'</span><span class="badge '+t.cls+'">'+t.label+'</span>';
+      row.onclick = function() { document.getElementById(inputId).value = t.code; verifyFn(); };
+      list.appendChild(row);
+    })(TESTS[i]);
+  }
+}
+
+// Read code from URL and auto-verify
+function getUrlCode() {
+  var params = new URLSearchParams(window.location.search);
+  return params.get("code") ? params.get("code").toUpperCase() : null;
+}
+
+function autoVerifyFromUrl(role) {
+  var code = getUrlCode();
+  if (!code) return;
+  if (role === "consumer") {
+    document.getElementById("consumerAutoBanner").style.display = "flex";
+    document.getElementById("consumerCodeInput").value = code;
+    setTimeout(function() {
+      doVerify("consumerCodeInput","consumer-result","consumerResIcon","consumerResTitle","consumerResSub","consumerResDetails", true);
+    }, 600);
+  } else {
+    document.getElementById("agentAutoBanner").style.display = "flex";
+    document.getElementById("codeInput").value = code;
+    setTimeout(function() {
+      doVerify("codeInput","result","resIcon","resTitle","resSub","resDetails", false);
+    }, 600);
+  }
+}
+
 // Navigation
-document.getElementById("btnConsumer").onclick = function() { showScreen("screen-consumer"); };
-document.getElementById("btnAgent").onclick    = function() { showScreen("screen-agent"); };
+document.getElementById("btnConsumer").onclick = function() { showScreen("screen-consumer"); autoVerifyFromUrl("consumer"); };
+document.getElementById("btnAgent").onclick    = function() { showScreen("screen-agent");    autoVerifyFromUrl("agent"); };
 document.getElementById("btnConsumerBack").onclick = function() { showScreen("screen-landing"); };
 document.getElementById("btnAgentBack").onclick    = function() { showScreen("screen-landing"); };
 
-// Agent verify
-document.getElementById("btnVerify").onclick = function() { doVerify("codeInput","result","resIcon","resTitle","resSub","resDetails", false); };
-document.getElementById("codeInput").onkeydown = function(e) { if (e.keyCode === 13) doVerify("codeInput","result","resIcon","resTitle","resSub","resDetails", false); };
+// If code in URL, show landing with a prompt
+window.onload = function() {
+  var code = getUrlCode();
+  if (code) {
+    var lp = document.querySelector(".landing p");
+    lp.innerHTML = 'A product stamp has been detected. Please select your role to verify it.';
+  }
+};
 
-// Consumer verify
+// Verify buttons
+document.getElementById("btnVerify").onclick = function() { doVerify("codeInput","result","resIcon","resTitle","resSub","resDetails", false); };
+document.getElementById("codeInput").onkeydown = function(e) { if (e.keyCode===13) doVerify("codeInput","result","resIcon","resTitle","resSub","resDetails", false); };
 document.getElementById("btnConsumerVerify").onclick = function() { doVerify("consumerCodeInput","consumer-result","consumerResIcon","consumerResTitle","consumerResSub","consumerResDetails", true); };
-document.getElementById("consumerCodeInput").onkeydown = function(e) { if (e.keyCode === 13) doVerify("consumerCodeInput","consumer-result","consumerResIcon","consumerResTitle","consumerResSub","consumerResDetails", true); };
+document.getElementById("consumerCodeInput").onkeydown = function(e) { if (e.keyCode===13) doVerify("consumerCodeInput","consumer-result","consumerResIcon","consumerResTitle","consumerResSub","consumerResDetails", true); };
 
 // Scan buttons
 document.getElementById("btnScan").onclick = function() { document.getElementById("modal").className = "modal open"; };
