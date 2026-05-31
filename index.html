@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_3.html -->
+<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_4.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,7 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 .landing { max-width: 460px; margin: 0 auto; padding: 32px 16px; text-align: center; }
 .landing h2 { color: #e8c97a; font-size: 20px; margin-bottom: 8px; }
 .landing p { color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 36px; line-height: 1.6; }
+.landing p.qr-detected { color: #e8c97a; font-size: 17px; font-weight: bold; background: #152240; border: 2px solid rgba(201,168,76,0.5); border-radius: 12px; padding: 16px; margin-bottom: 28px; line-height: 1.5; }
 .role-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
 .role-card { background: #152240; border: 2px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 24px 20px; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 18px; }
 .role-card:active { background: #1e3160; }
@@ -328,7 +329,8 @@ window.onload = function() {
   var code = getUrlCode();
   if (code) {
     var lp = document.querySelector(".landing p");
-    lp.innerHTML = 'A product stamp has been detected. Please select your role to verify it.';
+    lp.innerHTML = '&#128247; Product stamp detected &mdash; please select your role to verify it.';
+    lp.className = 'qr-detected';
   }
 };
 
