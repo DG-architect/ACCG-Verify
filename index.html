@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_4.html -->
+<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_5.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,29 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 .role-desc { color: rgba(255,255,255,0.5); font-size: 12px; line-height: 1.5; }
 .role-arrow { color: #c9a84c; font-size: 22px; margin-left: auto; flex-shrink: 0; }
 .landing-footer { color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* AUTH SCREEN */
+.auth-main { max-width: 460px; margin: 0 auto; padding: 32px 16px; }
+.auth-card { background: white; border-radius: 14px; overflow: hidden; margin-bottom: 16px; color: #0a1628; }
+.auth-card-top { background: #152240; padding: 18px; text-align: center; }
+.auth-card-top h2 { color: #e8c97a; font-size: 17px; margin-bottom: 4px; }
+.auth-card-top p { color: rgba(255,255,255,0.5); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.auth-card-body { padding: 24px 20px; }
+.auth-field { margin-bottom: 16px; }
+.auth-label { font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+.auth-input { width: 100%; border: 2px solid #ddd; border-radius: 8px; padding: 13px 14px; font-size: 16px; color: #0a1628; outline: none; font-family: 'Courier New', monospace; letter-spacing: 2px; text-transform: uppercase; }
+.auth-input:focus { border-color: #c9a84c; }
+.auth-input[type="password"] { letter-spacing: 4px; font-size: 20px; }
+.auth-btn { width: 100%; background: #c9a84c; color: #0a1628; border: none; border-radius: 10px; padding: 15px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 8px; }
+.auth-error { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 10px 14px; color: #b91c1c; font-size: 13px; margin-top: 12px; display: none; text-align: center; }
+.demo-creds { background: rgba(201,168,76,0.08); border: 1px dashed rgba(201,168,76,0.4); border-radius: 10px; padding: 14px 16px; margin-top: 16px; }
+.demo-creds-title { color: #c9a84c; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.demo-agent-row { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 10px 12px; margin-bottom: 6px; cursor: pointer; }
+.demo-agent-row:last-child { margin-bottom: 0; }
+.demo-agent-info { display: flex; flex-direction: column; gap: 2px; }
+.demo-agent-name { color: white; font-size: 13px; font-weight: bold; }
+.demo-agent-id { color: rgba(255,255,255,0.5); font-size: 11px; font-family: monospace; letter-spacing: 1px; }
+.demo-agent-tap { color: #c9a84c; font-size: 11px; }
 
 /* SHARED */
 .main { max-width: 480px; margin: 0 auto; padding: 20px 16px; }
@@ -150,6 +173,50 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
     <div class="test-panel">
       <h3>Demo codes — tap to test</h3>
       <div id="consumerTestList"><div class="test-row"><span class="test-code">ACC-ALC-0001</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0002</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0003</span><span class="badge b-genuine">Genuine</span></div><div class="test-row"><span class="test-code">ACC-ALC-0004</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">ACC-ALC-0005</span><span class="badge b-redeemed">Redeemed</span></div><div class="test-row"><span class="test-code">FAKE-CODE-999</span><span class="badge b-invalid">Invalid</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH -->
+<div class="screen" id="screen-auth">
+  <div class="auth-main">
+    <button class="back-btn" id="btnAuthBack">← Back</button>
+    <div class="auth-card">
+      <div class="auth-card-top">
+        <div style="font-size:36px;margin-bottom:8px">🔒</div>
+        <h2>Agent Authentication</h2>
+        <p>Tax Authority Field Portal</p>
+      </div>
+      <div class="auth-card-body">
+        <div class="auth-field">
+          <label class="auth-label">Agent ID</label>
+          <input class="auth-input" id="authAgentId" type="text" placeholder="e.g. ETA-00142" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" maxlength="10">
+        </div>
+        <div class="auth-field">
+          <label class="auth-label">PIN</label>
+          <input class="auth-input" id="authPin" type="password" placeholder="●●●●" maxlength="6" inputmode="numeric">
+        </div>
+        <button class="auth-btn" id="btnAuthLogin">Sign In</button>
+        <div class="auth-error" id="authError">❌ Invalid Agent ID or PIN. Please try again.</div>
+      </div>
+    </div>
+
+    <div class="demo-creds" id="demoCreds">
+      <div class="demo-creds-title">▶ Demo credentials — tap to auto-fill</div>
+      <div class="demo-agent-row" id="demoAgent1">
+        <div class="demo-agent-info">
+          <span class="demo-agent-name">Field Agent Hassan</span>
+          <span class="demo-agent-id">ETA-00142 &nbsp;|&nbsp; PIN: 4821</span>
+        </div>
+        <span class="demo-agent-tap">Tap to fill ›</span>
+      </div>
+      <div class="demo-agent-row" id="demoAgent2">
+        <div class="demo-agent-info">
+          <span class="demo-agent-name">Field Agent Rahman</span>
+          <span class="demo-agent-id">BGD-00271 &nbsp;|&nbsp; PIN: 7364</span>
+        </div>
+        <span class="demo-agent-tap">Tap to fill ›</span>
+      </div>
     </div>
   </div>
 </div>
@@ -320,9 +387,48 @@ function autoVerifyFromUrl(role) {
 
 // Navigation
 document.getElementById("btnConsumer").onclick = function() { showScreen("screen-consumer"); autoVerifyFromUrl("consumer"); };
-document.getElementById("btnAgent").onclick    = function() { showScreen("screen-agent");    autoVerifyFromUrl("agent"); };
+document.getElementById("btnAgent").onclick    = function() { showScreen("screen-auth"); };
 document.getElementById("btnConsumerBack").onclick = function() { showScreen("screen-landing"); };
 document.getElementById("btnAgentBack").onclick    = function() { showScreen("screen-landing"); };
+document.getElementById("btnAuthBack").onclick     = function() { showScreen("screen-landing"); };
+
+// Demo credentials auto-fill
+var AGENTS = {
+  "ETA-00142": { pin: "4821", name: "Field Agent Hassan",  region: "Cairo District" },
+  "BGD-00271": { pin: "7364", name: "Field Agent Rahman",  region: "Dhaka Zone 3"   }
+};
+
+document.getElementById("demoAgent1").onclick = function() {
+  document.getElementById("authAgentId").value = "ETA-00142";
+  document.getElementById("authPin").value = "4821";
+  document.getElementById("authError").style.display = "none";
+};
+document.getElementById("demoAgent2").onclick = function() {
+  document.getElementById("authAgentId").value = "BGD-00271";
+  document.getElementById("authPin").value = "7364";
+  document.getElementById("authError").style.display = "none";
+};
+
+// Auth login
+function doLogin() {
+  var agentId = document.getElementById("authAgentId").value.trim().toUpperCase();
+  var pin     = document.getElementById("authPin").value.trim();
+  var agent   = AGENTS[agentId];
+
+  if (agent && agent.pin === pin) {
+    document.getElementById("authError").style.display = "none";
+    // Update agent portal header with agent name
+    document.querySelector("#screen-agent .card-top p").innerHTML =
+      "Field Agent Portal &mdash; " + agent.name + " &nbsp;|&nbsp; " + agent.region;
+    showScreen("screen-agent");
+    autoVerifyFromUrl("agent");
+  } else {
+    document.getElementById("authError").style.display = "block";
+  }
+}
+
+document.getElementById("btnAuthLogin").onclick = doLogin;
+document.getElementById("authPin").onkeydown = function(e) { if (e.keyCode === 13) doLogin(); };
 
 // If code in URL, show landing with a prompt
 window.onload = function() {
