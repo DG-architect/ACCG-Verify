@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_7.html -->
+<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_8.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,6 +142,24 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 .summary-row:last-child { border-bottom: none; }
 .summary-label { color: rgba(255,255,255,0.5); }
 .summary-value { color: white; font-weight: 600; }
+
+.alert-card { background: rgba(185,28,28,0.08); border: 1px solid rgba(185,28,28,0.25); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }
+.alert-card:last-child { margin-bottom: 0; }
+.alert-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+.alert-code { font-family: monospace; font-size: 13px; color: #f87171; font-weight: bold; letter-spacing: 1px; }
+.alert-time { font-size: 10px; color: rgba(255,255,255,0.3); text-align: right; }
+.alert-product { font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+.alert-meta { display: flex; gap: 10px; flex-wrap: wrap; }
+.alert-tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+.tag-redeemed { background: rgba(185,28,28,0.2); color: #f87171; }
+.tag-invalid  { background: rgba(180,83,9,0.2);  color: #fbbf24; }
+.tag-region   { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.4); }
+.tag-type     { background: rgba(96,165,250,0.1); color: #60a5fa; }
+
+.alert-detail { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); }
+.alert-detail-row { display: flex; justify-content: space-between; font-size: 11px; padding: 3px 0; }
+.alert-detail-label { color: rgba(255,255,255,0.4); }
+.alert-detail-value { color: rgba(255,255,255,0.8); font-weight: 600; text-align: right; }
 
 .live-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; display: inline-block; margin-right: 6px; animation: blink 1.5s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -442,7 +460,21 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
       </div>
     </div>
 
-    <div class="footer">ACCG &nbsp;·&nbsp; Central Operations Dashboard &nbsp;·&nbsp; Prototype v0.3</div>
+    <!-- Recent Alerts -->
+    <div class="dash-section">
+      <div class="dash-section-title">
+        <span>⚠ Recent Alerts</span>
+        <span style="color:#f87171;font-size:10px">23 total this month</span>
+      </div>
+
+      <div class="alert-list" id="alertList"><div class="alert-card"><div class="alert-card-top"><span class="alert-code">ACC-ALC-0004</span><span class="alert-time">31 May 2026<br>08:42</span></div><div class="alert-product">Stella Premium — Alcohol - Spirits</div><div class="alert-meta"><span class="alert-tag tag-redeemed">Already Redeemed</span><span class="alert-tag tag-region">📍 Alexandria — Port Zone</span><span class="alert-tag tag-type">Consumer App</span></div><div class="alert-detail" id="adet-0"><div class="alert-detail-row"><span class="alert-detail-label">Serial No.</span><span class="alert-detail-value">EG-AL-00012202</span></div><div class="alert-detail-row"><span class="alert-detail-label">First redeemed</span><span class="alert-detail-value">23 May 2026 14:32</span></div><div class="alert-detail-row"><span class="alert-detail-label">Region</span><span class="alert-detail-value">Alexandria — Port Zone</span></div><div class="alert-detail-row"><span class="alert-detail-label">Detected by</span><span class="alert-detail-value">Consumer App</span></div><div class="alert-detail-row"><span class="alert-detail-label">Status</span><span class="alert-detail-value" style="color:#f87171">Under Review</span></div></div></div><div class="alert-card"><div class="alert-card-top"><span class="alert-code">ACC-TBC-0004</span><span class="alert-time">31 May 2026<br>07:15</span></div><div class="alert-product">Merit Gold — Tobacco - Cigarettes</div><div class="alert-meta"><span class="alert-tag tag-redeemed">Already Redeemed</span><span class="alert-tag tag-region">📍 Dhaka — Zone 2</span><span class="alert-tag tag-type">Field Agent</span></div><div class="alert-detail" id="adet-1"><div class="alert-detail-row"><span class="alert-detail-label">Serial No.</span><span class="alert-detail-value">EG-TB-00012201</span></div><div class="alert-detail-row"><span class="alert-detail-label">First redeemed</span><span class="alert-detail-value">22 May 2026 09:14</span></div><div class="alert-detail-row"><span class="alert-detail-label">Region</span><span class="alert-detail-value">Dhaka — Zone 2</span></div><div class="alert-detail-row"><span class="alert-detail-label">Detected by</span><span class="alert-detail-value">Field Agent</span></div><div class="alert-detail-row"><span class="alert-detail-label">Status</span><span class="alert-detail-value" style="color:#f87171">Under Review</span></div></div></div><div class="alert-card"><div class="alert-card-top"><span class="alert-code">UNKN-0042</span><span class="alert-time">30 May 2026<br>21:03</span></div><div class="alert-product">Unknown — Unknown Product</div><div class="alert-meta"><span class="alert-tag tag-invalid">Invalid Code</span><span class="alert-tag tag-region">📍 Chittagong — Port Area</span><span class="alert-tag tag-type">Field Agent</span></div><div class="alert-detail" id="adet-2"><div class="alert-detail-row"><span class="alert-detail-label">Serial No.</span><span class="alert-detail-value">N/A</span></div><div class="alert-detail-row"><span class="alert-detail-label">First redeemed</span><span class="alert-detail-value">N/A</span></div><div class="alert-detail-row"><span class="alert-detail-label">Region</span><span class="alert-detail-value">Chittagong — Port Area</span></div><div class="alert-detail-row"><span class="alert-detail-label">Detected by</span><span class="alert-detail-value">Field Agent</span></div><div class="alert-detail-row"><span class="alert-detail-label">Status</span><span class="alert-detail-value" style="color:#f87171">Under Review</span></div></div></div><div class="alert-card"><div class="alert-card-top"><span class="alert-code">ACC-ALC-0005</span><span class="alert-time">30 May 2026<br>18:30</span></div><div class="alert-product">Vintage Chateaux — Alcohol - Wine</div><div class="alert-meta"><span class="alert-tag tag-redeemed">Already Redeemed</span><span class="alert-tag tag-region">📍 Dhaka — District 5</span><span class="alert-tag tag-type">Retailer Scan</span></div><div class="alert-detail" id="adet-3"><div class="alert-detail-row"><span class="alert-detail-label">Serial No.</span><span class="alert-detail-value">EG-AL-00012205</span></div><div class="alert-detail-row"><span class="alert-detail-label">First redeemed</span><span class="alert-detail-value">19 May 2026 08:21</span></div><div class="alert-detail-row"><span class="alert-detail-label">Region</span><span class="alert-detail-value">Dhaka — District 5</span></div><div class="alert-detail-row"><span class="alert-detail-label">Detected by</span><span class="alert-detail-value">Retailer Scan</span></div><div class="alert-detail-row"><span class="alert-detail-label">Status</span><span class="alert-detail-value" style="color:#f87171">Under Review</span></div></div></div><div class="alert-card"><div class="alert-card-top"><span class="alert-code">UNKN-0039</span><span class="alert-time">30 May 2026<br>14:17</span></div><div class="alert-product">Unknown — Unknown Product</div><div class="alert-meta"><span class="alert-tag tag-invalid">Invalid Code</span><span class="alert-tag tag-region">📍 Sylhet — City Centre</span><span class="alert-tag tag-type">Consumer App</span></div><div class="alert-detail" id="adet-4"><div class="alert-detail-row"><span class="alert-detail-label">Serial No.</span><span class="alert-detail-value">N/A</span></div><div class="alert-detail-row"><span class="alert-detail-label">First redeemed</span><span class="alert-detail-value">N/A</span></div><div class="alert-detail-row"><span class="alert-detail-label">Region</span><span class="alert-detail-value">Sylhet — City Centre</span></div><div class="alert-detail-row"><span class="alert-detail-label">Detected by</span><span class="alert-detail-value">Consumer App</span></div><div class="alert-detail-row"><span class="alert-detail-label">Status</span><span class="alert-detail-value" style="color:#f87171">Under Review</span></div></div></div></div>
+
+      <div style="text-align:center;margin-top:12px">
+        <span style="color:#c9a84c;font-size:12px;cursor:pointer" id="btnShowMore">Show all alerts ›</span>
+      </div>
+    </div>
+
+    <div class="footer">ACCG &nbsp;·&nbsp; Central Operations Dashboard &nbsp;·&nbsp; Prototype v0.4</div>
   </div>
 </div>
 
@@ -707,6 +739,65 @@ document.getElementById("btnModalClose").onclick = function() { document.getElem
 // Build test lists
 buildTestList("testList", "codeInput", function() { doVerify("codeInput","result","resIcon","resTitle","resSub","resDetails", false); });
 buildTestList("consumerTestList", "consumerCodeInput", function() { doVerify("consumerCodeInput","consumer-result","consumerResIcon","consumerResTitle","consumerResSub","consumerResDetails", true); });
+// Recent alerts data
+var ALERTS = [
+  { code:"ACC-ALC-0004", type:"redeemed", product:"Alcohol - Spirits", brand:"Stella Premium",     region:"Alexandria",  district:"Port Zone",    date:"31 May 2026", time:"08:42", scannedBy:"Consumer App",    serial:"EG-AL-00012202", firstScan:"23 May 2026 14:32" },
+  { code:"ACC-TBC-0004", type:"redeemed", product:"Tobacco - Cigarettes", brand:"Merit Gold",      region:"Dhaka",       district:"Zone 2",       date:"31 May 2026", time:"07:15", scannedBy:"Field Agent",     serial:"EG-TB-00012201", firstScan:"22 May 2026 09:14" },
+  { code:"UNKN-0042",    type:"invalid",  product:"Unknown Product",    brand:"Unknown",           region:"Chittagong",  district:"Port Area",    date:"30 May 2026", time:"21:03", scannedBy:"Field Agent",     serial:"N/A",            firstScan:"N/A" },
+  { code:"ACC-ALC-0005", type:"redeemed", product:"Alcohol - Wine",     brand:"Vintage Chateaux",  region:"Dhaka",       district:"District 5",   date:"30 May 2026", time:"18:30", scannedBy:"Retailer Scan",   serial:"EG-AL-00012205", firstScan:"19 May 2026 08:21" },
+  { code:"UNKN-0039",    type:"invalid",  product:"Unknown Product",    brand:"Unknown",           region:"Sylhet",      district:"City Centre",  date:"30 May 2026", time:"14:17", scannedBy:"Consumer App",    serial:"N/A",            firstScan:"N/A" },
+  { code:"ACC-TBC-0005", type:"redeemed", product:"Tobacco - Cigars",   brand:"Nile Reserve",      region:"Chittagong",  district:"Market Area",  date:"29 May 2026", time:"11:52", scannedBy:"Field Agent",     serial:"EG-TC-00012204", firstScan:"20 May 2026 16:48" },
+  { code:"UNKN-0031",    type:"invalid",  product:"Unknown Product",    brand:"Unknown",           region:"Rajshahi",    district:"Zone 1",       date:"28 May 2026", time:"09:20", scannedBy:"Consumer App",    serial:"N/A",            firstScan:"N/A" },
+  { code:"ACC-RTL-0004", type:"redeemed", product:"Retail - Electronics", brand:"TechShield Pro",  region:"Dhaka",       district:"Zone 3",       date:"28 May 2026", time:"11:05", scannedBy:"Retailer Scan",   serial:"BD-RT-00012203", firstScan:"28 May 2026 11:05" }
+];
+
+var alertsExpanded = {};
+var alertsShowAll  = false;
+
+function buildAlertList() {
+  var list    = document.getElementById("alertList");
+  var visible = alertsShowAll ? ALERTS : ALERTS.slice(0, 5);
+  list.innerHTML = "";
+
+  visible.forEach(function(a, i) {
+    var isRedeemed = a.type === "redeemed";
+    var card = document.createElement("div");
+    card.className = "alert-card";
+    card.innerHTML =
+      '<div class="alert-card-top">' +
+        '<span class="alert-code">' + a.code + '</span>' +
+        '<span class="alert-time">' + a.date + '<br>' + a.time + '</span>' +
+      '</div>' +
+      '<div class="alert-product">' + a.brand + ' &mdash; ' + a.product + '</div>' +
+      '<div class="alert-meta">' +
+        '<span class="alert-tag ' + (isRedeemed ? "tag-redeemed" : "tag-invalid") + '">' + (isRedeemed ? "Already Redeemed" : "Invalid Code") + '</span>' +
+        '<span class="alert-tag tag-region">&#128205; ' + a.region + ' &mdash; ' + a.district + '</span>' +
+        '<span class="alert-tag tag-type">' + a.scannedBy + '</span>' +
+      '</div>' +
+      '<div class="alert-detail" id="adet-' + i + '">' +
+        '<div class="alert-detail-row"><span class="alert-detail-label">Serial No.</span><span class="alert-detail-value">' + a.serial + '</span></div>' +
+        '<div class="alert-detail-row"><span class="alert-detail-label">First redeemed</span><span class="alert-detail-value">' + a.firstScan + '</span></div>' +
+        '<div class="alert-detail-row"><span class="alert-detail-label">Region</span><span class="alert-detail-value">' + a.region + ' &mdash; ' + a.district + '</span></div>' +
+        '<div class="alert-detail-row"><span class="alert-detail-label">Detected by</span><span class="alert-detail-value">' + a.scannedBy + '</span></div>' +
+        '<div class="alert-detail-row"><span class="alert-detail-label">Status</span><span class="alert-detail-value" style="color:#f87171">Under Review</span></div>' +
+      '</div>';
+
+    card.onclick = function() {
+      var det = document.getElementById("adet-" + i);
+      det.style.display = det.style.display === "block" ? "none" : "block";
+    };
+
+    list.appendChild(card);
+  });
+}
+
+buildAlertList();
+
+document.getElementById("btnShowMore").onclick = function() {
+  alertsShowAll = !alertsShowAll;
+  buildAlertList();
+  this.textContent = alertsShowAll ? "Show fewer alerts \u2039" : "Show all alerts \u203a";
+};
 </script>
 
 
