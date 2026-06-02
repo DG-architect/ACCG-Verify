@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/dawng/Downloads/index_8.html -->
+<!-- saved from url=(0046)file:///C:/Users/dawng/Downloads/index_12.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,15 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-height: 100vh; }
 
-.header { background: #0a1628; border-bottom: 2px solid #c9a84c; padding: 18px; text-align: center; }
-.header h1 { color: #c9a84c; font-size: 20px; margin-bottom: 4px; }
-.header p { color: rgba(255,255,255,0.5); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.header { background: #0a1628; border-bottom: 2px solid #c9a84c; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; }
+.header-logo { display: flex; align-items: center; gap: 10px; }
+.header-bars { display: flex; gap: 4px; align-items: center; }
+.header-bar1 { width: 5px; height: 36px; background: #c9a84c; border-radius: 2px; }
+.header-bar2 { width: 5px; height: 36px; background: rgba(201,168,76,0.3); border-radius: 2px; }
+.header-wordmark { display: flex; flex-direction: column; }
+.header-name { font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: white; letter-spacing: 4px; line-height: 1; }
+.header-sub { font-size: 8px; color: #c9a84c; letter-spacing: 3px; text-transform: uppercase; margin-top: 3px; }
+.header-byline { font-size: 9px; color: rgba(255,255,255,0.35); letter-spacing: 1px; text-align: right; }
 
 .screen { display: none; }
 .screen.active { display: block; }
@@ -169,7 +175,62 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 .dash-agent-role { color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 2px; }
 .dash-logout { color: rgba(255,255,255,0.3); font-size: 11px; cursor: pointer; }
 
-.footer { text-align: center; padding: 16px; font-size: 11px; color: rgba(255,255,255,0.3); }
+/* SENTINEL REWARDS */
+.rewards-card { background: linear-gradient(135deg, #0a1628 0%, #152240 100%); border: 2px solid #c9a84c; border-radius: 12px; padding: 16px; margin-top: 14px; }
+.rewards-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.rewards-logo-bars { display: flex; gap: 3px; align-items: center; }
+.rewards-bar1 { width: 4px; height: 22px; background: #c9a84c; border-radius: 2px; }
+.rewards-bar2 { width: 4px; height: 22px; background: rgba(201,168,76,0.3); border-radius: 2px; }
+.rewards-title { font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: white; letter-spacing: 2px; }
+.rewards-sub { font-size: 8px; color: #c9a84c; letter-spacing: 3px; text-transform: uppercase; }
+.rewards-message { color: #e8c97a; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
+.rewards-desc { color: rgba(255,255,255,0.6); font-size: 12px; line-height: 1.5; margin-bottom: 12px; }
+.rewards-ref-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; }
+.rewards-ref-label { color: rgba(255,255,255,0.4); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.rewards-ref-val { font-family: monospace; font-size: 14px; font-weight: bold; color: #c9a84c; letter-spacing: 2px; }
+.rewards-stars { color: #c9a84c; font-size: 16px; letter-spacing: 2px; margin-bottom: 6px; }
+.mfr-menu-card { background: #152240; border: 1px solid rgba(201,168,76,0.25); border-radius: 14px; padding: 20px 18px; margin-bottom: 14px; display: flex; align-items: center; gap: 16px; cursor: pointer; }
+.mfr-menu-card:active { background: #1e3160; }
+.mfr-menu-icon { font-size: 28px; flex-shrink: 0; }
+.mfr-menu-title { color: #e8c97a; font-size: 16px; font-weight: bold; margin-bottom: 3px; }
+.mfr-menu-desc { color: rgba(255,255,255,0.45); font-size: 12px; line-height: 1.4; }
+.mfr-welcome { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 12px 16px; margin-bottom: 18px; }
+.mfr-welcome-name { color: #e8c97a; font-size: 14px; font-weight: bold; }
+.mfr-welcome-co { color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 2px; }
+
+/* ORDER FORM */
+.form-group { margin-bottom: 16px; }
+.form-label { font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+.form-select, .form-input, .form-textarea { width: 100%; border: 1.5px solid #ddd; border-radius: 8px; padding: 11px 13px; font-size: 14px; color: #0a1628; outline: none; background: white; font-family: inherit; }
+.form-select:focus, .form-input:focus, .form-textarea:focus { border-color: #c9a84c; }
+.form-textarea { min-height: 80px; resize: vertical; }
+.form-row { display: flex; gap: 10px; }
+.form-row .form-group { flex: 1; }
+.submit-btn { width: 100%; background: #c9a84c; color: #0a1628; border: none; border-radius: 10px; padding: 14px; font-size: 15px; font-weight: bold; cursor: pointer; margin-top: 4px; }
+.form-success { display: none; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 10px; padding: 18px; text-align: center; margin-top: 16px; }
+.form-success-icon { font-size: 36px; margin-bottom: 8px; }
+.form-success-title { color: #065f46; font-size: 16px; font-weight: bold; margin-bottom: 4px; }
+.form-success-ref { color: #065f46; font-size: 13px; }
+
+/* SCRAP FORM */
+.scrap-warning { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; padding: 14px 16px; margin-bottom: 16px; }
+.scrap-warning p { color: #92400e; font-size: 12px; line-height: 1.6; }
+
+/* MFR DASHBOARD */
+.mfr-stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.mfr-stat { background: #152240; border-radius: 10px; padding: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.06); }
+.mfr-stat-val { font-size: 24px; font-weight: 900; color: #e8c97a; }
+.mfr-stat-lbl { font-size: 9px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
+.order-row { background: #152240; border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.06); }
+.order-row-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.order-ref { font-family: monospace; font-size: 12px; color: #c9a84c; font-weight: bold; }
+.order-date { font-size: 10px; color: rgba(255,255,255,0.3); }
+.order-detail { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 5px; }
+.order-status { display: inline-block; font-size: 10px; font-weight: bold; padding: 2px 8px; border-radius: 10px; }
+.status-pending    { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.status-processing { background: rgba(96,165,250,0.15); color: #60a5fa; }
+.status-complete   { background: rgba(52,211,153,0.15); color: #34d399; }
+.status-scrap      { background: rgba(248,113,113,0.15); color: #f87171; }
 .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; }
 .modal.open { display: flex; }
 .modal-box { background: #152240; border: 1.5px solid #c9a84c; border-radius: 18px; padding: 28px 24px; text-align: center; max-width: 300px; margin: 20px; }
@@ -181,12 +242,21 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
 <body>
 
 <div class="header">
-  <h1>ACCG</h1>
-  <p>Anti Counterfeiting &amp; Compliance Group</p>
+  <div class="header-logo">
+    <div class="header-bars">
+      <div class="header-bar1"></div>
+      <div class="header-bar2"></div>
+    </div>
+    <div class="header-wordmark">
+      <span class="header-name">SENTINEL</span>
+      <span class="header-sub">by West House</span>
+    </div>
+  </div>
+  <div class="header-byline">Tax Stamp &amp;<br>Compliance System</div>
 </div>
 
 <!-- LANDING -->
-<div class="screen active" id="screen-landing">
+<div class="screen" id="screen-landing">
   <div class="landing">
     <h2>Welcome</h2>
     <p>Please select your role to continue to the stamp verification system.</p>
@@ -215,13 +285,21 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
         </div>
         <div class="role-arrow">›</div>
       </div>
+      <div class="role-card" id="btnManufacturer">
+        <div class="role-icon">🏭</div>
+        <div>
+          <div class="role-title">Manufacturer</div>
+          <div class="role-desc">Order codes or stamps, declare scrap, and view your order dashboard.</div>
+        </div>
+        <div class="role-arrow">›</div>
+      </div>
     </div>
     <div class="landing-footer">Prototype v0.1 &nbsp;·&nbsp; Demo use only</div>
   </div>
 </div>
 
 <!-- CONSUMER -->
-<div class="screen" id="screen-consumer">
+<div class="screen active" id="screen-consumer">
   <div class="main">
     <button class="back-btn" id="btnConsumerBack">← Back</button>
     <div id="consumerAutoBanner" class="auto-banner" style="display:none">
@@ -478,7 +556,231 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
   </div>
 </div>
 
-<div class="footer">ACCG &nbsp;·&nbsp; Anti Counterfeiting &amp; Compliance Group</div>
+<!-- MANUFACTURER MENU -->
+<div class="screen" id="screen-manufacturer">
+  <div class="main">
+    <button class="back-btn" id="btnMfrBack">← Back</button>
+    <div class="mfr-welcome">
+      <div class="mfr-welcome-name" id="mfrWelcomeName">Welcome</div>
+      <div class="mfr-welcome-co" id="mfrWelcomeCo">Manufacturer Portal</div>
+    </div>
+    <div id="btnOrderNew" class="mfr-menu-card">
+      <div class="mfr-menu-icon">📄</div>
+      <div>
+        <div class="mfr-menu-title">Order New Codes / Stamps</div>
+        <div class="mfr-menu-desc">Raise a new order for unique codes or physical stamps for your products.</div>
+      </div>
+      <div class="role-arrow">›</div>
+    </div>
+    <div id="btnDeclareScrap" class="mfr-menu-card">
+      <div class="mfr-menu-icon">⚠</div>
+      <div>
+        <div class="mfr-menu-title">Declare Scrap</div>
+        <div class="mfr-menu-desc">Report damaged, spoiled or unused stamps that cannot be applied to products.</div>
+      </div>
+      <div class="role-arrow">›</div>
+    </div>
+    <div id="btnMfrDash" class="mfr-menu-card">
+      <div class="mfr-menu-icon">📊</div>
+      <div>
+        <div class="mfr-menu-title">Order Dashboard</div>
+        <div class="mfr-menu-desc">View order status, order history and pending deliveries.</div>
+      </div>
+      <div class="role-arrow">›</div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER NEW CODES / STAMPS -->
+<div class="screen" id="screen-order">
+  <div class="main">
+    <button class="back-btn" id="btnOrderBack">← Back</button>
+    <div class="card">
+      <div class="card-top">
+        <h2>Order New Codes / Stamps</h2>
+        <p>Complete the form below to raise a new order</p>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label class="form-label">Order Type</label>
+          <select class="form-select" id="orderType">
+            <option value="">-- Select order type --</option>
+            <option value="codes">Unique Codes Only (Direct-to-Product)</option>
+            <option value="stamps">Physical Stamps with Codes</option>
+            <option value="both">Both — Stamps and Codes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Product Category</label>
+          <select class="form-select" id="orderProduct">
+            <option value="">-- Select product category --</option>
+            <option value="alcohol">Alcohol — Spirits</option>
+            <option value="wine">Alcohol — Wine</option>
+            <option value="tobacco-cig">Tobacco — Cigarettes</option>
+            <option value="tobacco-cigar">Tobacco — Cigars</option>
+            <option value="retail">Retail / Brand Protection</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Quantity Required</label>
+            <input class="form-input" id="orderQty" type="number" placeholder="e.g. 50000" min="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Required By Date</label>
+            <input class="form-input" id="orderDate" type="date">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Brand / Product Name</label>
+          <input class="form-input" id="orderBrand" type="text" placeholder="e.g. Stella Premium">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Additional Notes</label>
+          <textarea class="form-textarea" id="orderNotes" placeholder="Any special requirements or instructions..."></textarea>
+        </div>
+        <button class="submit-btn" id="btnSubmitOrder">Submit Order</button>
+        <div class="form-success" id="orderSuccess">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-title">Order Submitted Successfully</div>
+          <div class="form-success-ref" id="orderRef"></div>
+          <div style="color:#065f46;font-size:12px;margin-top:8px">Your order is now pending review by the Sentinel system. You will be notified once authorised.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DECLARE SCRAP -->
+<div class="screen" id="screen-scrap">
+  <div class="main">
+    <button class="back-btn" id="btnScrapBack">← Back</button>
+    <div class="card">
+      <div class="card-top">
+        <h2>Declare Scrap</h2>
+        <p>Report damaged or unusable stamps</p>
+      </div>
+      <div class="card-body">
+        <div class="scrap-warning">
+          <p>⚠ Scrap declarations are subject to audit. All declared codes will be permanently invalidated in the Sentinel system. This action cannot be undone.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Reason for Scrap</label>
+          <select class="form-select" id="scrapReason">
+            <option value="">-- Select reason --</option>
+            <option value="damaged">Stamps physically damaged in transit</option>
+            <option value="misprint">Misprint or production error</option>
+            <option value="expired">Expired — past use-by date</option>
+            <option value="recalled">Product recalled</option>
+            <option value="other">Other (please specify below)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Code Range or Batch Reference</label>
+          <input class="form-input" id="scrapBatch" type="text" placeholder="e.g. ACC-ALC-0100 to ACC-ALC-0250">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Quantity to Scrap</label>
+            <input class="form-input" id="scrapQty" type="number" placeholder="e.g. 150" min="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Date of Scrap</label>
+            <input class="form-input" id="scrapDate" type="date">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Additional Details</label>
+          <textarea class="form-textarea" id="scrapNotes" placeholder="Provide any additional information to support this declaration..."></textarea>
+        </div>
+        <button class="submit-btn" id="btnSubmitScrap">Submit Scrap Declaration</button>
+        <div class="form-success" id="scrapSuccess">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-title">Scrap Declaration Submitted</div>
+          <div class="form-success-ref" id="scrapRef"></div>
+          <div style="color:#065f46;font-size:12px;margin-top:8px">The declared codes have been flagged for invalidation pending audit approval.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MANUFACTURER DASHBOARD -->
+<div class="screen" id="screen-mfr-dash">
+  <div class="main">
+    <button class="back-btn" id="btnMfrDashBack">← Back</button>
+    <div class="card">
+      <div class="card-top">
+        <h2>Order Dashboard</h2>
+        <p id="mfrDashCo">Manufacturer Portal</p>
+      </div>
+      <div class="card-body">
+        <div class="mfr-stat-row">
+          <div class="mfr-stat">
+            <div class="mfr-stat-val">3</div>
+            <div class="mfr-stat-lbl">Pending Orders</div>
+          </div>
+          <div class="mfr-stat">
+            <div class="mfr-stat-val">142k</div>
+            <div class="mfr-stat-lbl">Codes Issued</div>
+          </div>
+          <div class="mfr-stat">
+            <div class="mfr-stat-val">210</div>
+            <div class="mfr-stat-lbl">Scrapped</div>
+          </div>
+        </div>
+
+        <div style="color:#c9a84c;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Recent Orders</div>
+
+        <div class="order-row">
+          <div class="order-row-top">
+            <span class="order-ref">ORD-20260528-4421</span>
+            <span class="order-date">28 May 2026</span>
+          </div>
+          <div class="order-detail">Physical Stamps — Stella Premium Spirits — 25,000 units</div>
+          <span class="order-status status-processing">In Production</span>
+        </div>
+
+        <div class="order-row">
+          <div class="order-row-top">
+            <span class="order-ref">ORD-20260520-3814</span>
+            <span class="order-date">20 May 2026</span>
+          </div>
+          <div class="order-detail">Unique Codes Only — Vintage Chateaux Wine — 10,000 units</div>
+          <span class="order-status status-complete">Delivered</span>
+        </div>
+
+        <div class="order-row">
+          <div class="order-row-top">
+            <span class="order-ref">ORD-20260515-3291</span>
+            <span class="order-date">15 May 2026</span>
+          </div>
+          <div class="order-detail">Physical Stamps — London Dry Gin — 50,000 units</div>
+          <span class="order-status status-complete">Delivered</span>
+        </div>
+
+        <div class="order-row">
+          <div class="order-row-top">
+            <span class="order-ref">SCP-20260510-0042</span>
+            <span class="order-date">10 May 2026</span>
+          </div>
+          <div class="order-detail">Scrap Declaration — Damaged in transit — 210 stamps</div>
+          <span class="order-status status-scrap">Scrap Approved</span>
+        </div>
+
+        <div class="order-row">
+          <div class="order-row-top">
+            <span class="order-ref">ORD-20260501-2847</span>
+            <span class="order-date">1 May 2026</span>
+          </div>
+          <div class="order-detail">Physical Stamps — Stella Premium Spirits — 57,000 units</div>
+          <span class="order-status status-complete">Delivered</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal" id="modal">
   <div class="modal-box">
@@ -488,6 +790,8 @@ body { font-family: Arial, sans-serif; background: #0a1628; color: white; min-he
     <button class="modal-close" id="btnModalClose">Got it</button>
   </div>
 </div>
+
+<div class="footer">Sentinel &nbsp;·&nbsp; by West House</div>
 
 <script>
 var CODES = {
@@ -558,6 +862,26 @@ function consumerAlertHtml(type, code) {
   '</div>';
 }
 
+function rewardsHtml(code) {
+  var ref = "SRW-" + new Date().toISOString().slice(0,10).replace(/-/g,"") + "-" + Math.floor(10000 + Math.random() * 89999);
+  return '<div class="rewards-card">' +
+    '<div class="rewards-header">' +
+      '<div class="rewards-logo-bars"><div class="rewards-bar1"></div><div class="rewards-bar2"></div></div>' +
+      '<div><div class="rewards-title">SENTINEL <span style="color:#c9a84c">REWARDS</span></div>' +
+      '<div class="rewards-sub">by West House</div></div>' +
+    '</div>' +
+    '<div class="rewards-stars">&#9733; &#9733; &#9733;</div>' +
+    '<div class="rewards-message">&#127881; You have been entered into this month\'s prize draw!</div>' +
+    '<div class="rewards-desc">Thank you for scanning a genuine product and helping protect Egyptian consumers from counterfeit goods. Your entry has been registered automatically.</div>' +
+    '<div class="rewards-ref-box">' +
+      '<div><div class="rewards-ref-label">Your Entry Reference</div>' +
+      '<div class="rewards-ref-val">' + ref + '</div></div>' +
+      '<div style="color:#c9a84c;font-size:22px">&#127873;</div>' +
+    '</div>' +
+    '<div style="color:rgba(255,255,255,0.35);font-size:10px;margin-top:10px;text-align:center">Draw takes place on the last day of each month &middot; Winners notified by SMS</div>' +
+  '</div>';
+}
+
 function doVerify(inputId, resultId, iconId, titleId, subId, detId, isConsumer) {
   var code = document.getElementById(inputId).value.trim().toUpperCase();
   if (!code) { alert("Please enter a stamp code first."); return; }
@@ -575,7 +899,7 @@ function doVerify(inputId, resultId, iconId, titleId, subId, detId, isConsumer) 
     result.className += " invalid";
     icon.innerHTML  = "?";
     title.innerHTML = isConsumer ? "&#9888; Warning — Unrecognised Code" : "Code Not Recognised";
-    sub.innerHTML   = isConsumer ? "This code does not exist in the ACCG system." : "This code does not exist in the ACCG system.";
+    sub.innerHTML   = isConsumer ? "This code does not exist in the Sentinel system." : "This code does not exist in the Sentinel system.";
     det.innerHTML   = isConsumer
       ? consumerAlertHtml("invalid", code)
       : rowHtml("Code", code) + rowHtml("Status", '<span style="color:#b45309">Unknown / Invalid</span>') + rowHtml("Action", '<span style="color:#b91c1c">Report to central authority</span>');
@@ -583,9 +907,10 @@ function doVerify(inputId, resultId, iconId, titleId, subId, detId, isConsumer) 
   } else if (d.status === "genuine") {
     result.className += " genuine";
     icon.innerHTML  = "&#10003;";
-    title.innerHTML = isConsumer ? "Product is Genuine" : "Stamp Verified - Genuine";
-    sub.innerHTML   = isConsumer ? "This product carries a valid ACCG tax stamp and is genuine." : "This product carries a valid, unredeemed ACCG tax stamp.";
-    det.innerHTML   = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("Issued", d.issued) + rowHtml("Serial No.", d.serial) + rowHtml("Status", '<span style="color:#065f46;font-weight:bold">GENUINE</span>');
+    title.innerHTML = isConsumer ? "&#9989; Product is Genuine" : "Stamp Verified - Genuine";
+    sub.innerHTML   = isConsumer ? "This product carries a valid Sentinel tax stamp and is genuine." : "This product carries a valid, unredeemed Sentinel tax stamp.";
+    det.innerHTML   = rowHtml("Code", code) + rowHtml("Product", d.product) + rowHtml("Brand", d.brand) + rowHtml("Origin", d.origin) + rowHtml("Issued", d.issued) + rowHtml("Serial No.", d.serial) + rowHtml("Status", '<span style="color:#065f46;font-weight:bold">GENUINE</span>') +
+      (isConsumer ? rewardsHtml(code) : "");
 
   } else {
     result.className += " redeemed";
@@ -640,7 +965,42 @@ function autoVerifyFromUrl(role) {
   }
 }
 
-// Navigation
+// Manufacturer navigation
+document.getElementById("btnManufacturer").onclick = function() { showScreen("screen-manufacturer"); };
+document.getElementById("btnMfrBack").onclick       = function() { showScreen("screen-landing"); };
+document.getElementById("btnOrderNew").onclick      = function() { showScreen("screen-order"); };
+document.getElementById("btnOrderBack").onclick     = function() { showScreen("screen-manufacturer"); };
+document.getElementById("btnDeclareScrap").onclick  = function() { showScreen("screen-scrap"); };
+document.getElementById("btnScrapBack").onclick     = function() { showScreen("screen-manufacturer"); };
+document.getElementById("btnMfrDash").onclick       = function() { showScreen("screen-mfr-dash"); };
+document.getElementById("btnMfrDashBack").onclick   = function() { showScreen("screen-manufacturer"); };
+
+// Order form submission
+document.getElementById("btnSubmitOrder").onclick = function() {
+  var type    = document.getElementById("orderType").value;
+  var product = document.getElementById("orderProduct").value;
+  var qty     = document.getElementById("orderQty").value;
+  var brand   = document.getElementById("orderBrand").value;
+  if (!type || !product || !qty || !brand) { alert("Please complete all required fields."); return; }
+  var ref = "ORD-" + new Date().toISOString().slice(0,10).replace(/-/g,"") + "-" + Math.floor(1000 + Math.random()*9000);
+  document.getElementById("orderRef").textContent = "Order Reference: " + ref;
+  document.getElementById("orderSuccess").style.display = "block";
+  document.getElementById("btnSubmitOrder").style.display = "none";
+  document.getElementById("orderSuccess").scrollIntoView({ behavior: "smooth", block: "nearest" });
+};
+
+// Scrap form submission
+document.getElementById("btnSubmitScrap").onclick = function() {
+  var reason = document.getElementById("scrapReason").value;
+  var batch  = document.getElementById("scrapBatch").value;
+  var qty    = document.getElementById("scrapQty").value;
+  if (!reason || !batch || !qty) { alert("Please complete all required fields."); return; }
+  var ref = "SCP-" + new Date().toISOString().slice(0,10).replace(/-/g,"") + "-" + Math.floor(1000 + Math.random()*9000);
+  document.getElementById("scrapRef").textContent = "Declaration Reference: " + ref;
+  document.getElementById("scrapSuccess").style.display = "block";
+  document.getElementById("btnSubmitScrap").style.display = "none";
+  document.getElementById("scrapSuccess").scrollIntoView({ behavior: "smooth", block: "nearest" });
+};
 document.getElementById("btnConsumer").onclick = function() { showScreen("screen-consumer"); autoVerifyFromUrl("consumer"); };
 document.getElementById("btnAgent").onclick    = function() { showScreen("screen-auth"); };
 document.getElementById("btnCentral").onclick  = function() { showScreen("screen-auth"); };
